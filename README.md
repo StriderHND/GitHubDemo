@@ -77,5 +77,3 @@ A simple iOS app built using **SwiftUI** and **iOS 17 APIs** that allows users t
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-This `README.md` provides a clear and concise overview of the project, including its features, technologies, architecture, OS support, and installation steps. Feel free to customize it to better match your project structure or add any additional information you deem necessary.
