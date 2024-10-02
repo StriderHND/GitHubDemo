@@ -37,7 +37,7 @@ class NetworkManager: NetworkManagerProtocol {
         method: HTTPMethod = .GET,
         parameters: [String: Any]? = nil
     ) async throws -> T {
-        var urlComponents = URLComponents(string: endpoint)
+        var urlComponents = URLComponents(string: "\(APIs.GitHub.baseURL.absoluteString)\(endpoint)")
 
         // Add parameters as query items for GET requests
         if method == .GET, let parameters = parameters {

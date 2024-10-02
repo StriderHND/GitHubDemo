@@ -39,7 +39,7 @@ extension GitHubDataStore {
         do {
             let parameters: [String: Any] = ["since": since ?? 0, "per_page": 30]
             let newUsers: [User] = try await networkManager.request(
-                "https://api.github.com/users", method: .GET,
+                APIs.GitHub.users.rawValue, method: .GET,
                 parameters: parameters
             )
 
@@ -64,8 +64,8 @@ extension GitHubDataStore {
     func fetchUserData(username: String) async {
         Log.info("Starting fetchUserData for user: \(username)")
         do {
-            async let detail: UserDetail = NetworkManager.shared.request("https://api.github.com/users/\(username)")
-            async let repos: [Repository] = NetworkManager.shared.request("https://api.github.com/users/\(username)/repos")
+            async let detail: UserDetail = NetworkManager.shared.request("\(APIs.GitHub.users.rawValue)/\(username)")
+            async let repos: [Repository] = NetworkManager.shared.request("\(APIs.GitHub.users.rawValue)/\(username)/repos")
             let (userDetail, repositories) = try await (detail, repos)
             self.userDetail = userDetail
             self.repositories = repositories.filter { !$0.fork }

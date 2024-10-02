@@ -30,9 +30,11 @@
 		56049ECE2CAAFCBF00A87A92 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049ECD2CAAFCBF00A87A92 /* MockNetworkManager.swift */; };
 		56049ECF2CAAFCBF00A87A92 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049ECD2CAAFCBF00A87A92 /* MockNetworkManager.swift */; };
 		56049ED32CAAFD1B00A87A92 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049ED22CAAFD1B00A87A92 /* NetworkManagerProtocol.swift */; };
-		56049ED42CAAFD1B00A87A92 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049ED22CAAFD1B00A87A92 /* NetworkManagerProtocol.swift */; };
 		56049ED62CAAFD9000A87A92 /* GitHubDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049EA92CAAE8DA00A87A92 /* GitHubDataStore.swift */; };
 		5670EFE62CAD79CD00911C39 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5670EFE52CAD79CD00911C39 /* String+.swift */; };
+		5670EFE92CAD7EBE00911C39 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5670EFE82CAD7EBE00911C39 /* APIProtocol.swift */; };
+		5670EFEC2CAD7EFA00911C39 /* APIEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5670EFEB2CAD7EFA00911C39 /* APIEnum.swift */; };
+		5670EFEF2CAD7F7F00911C39 /* RawRepresentable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5670EFEE2CAD7F7F00911C39 /* RawRepresentable+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,9 @@
 		56049ED72CAAFEC500A87A92 /* GitHubDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHubDemo.entitlements; sourceTree = "<group>"; };
 		56049ED82CAAFEE000A87A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5670EFE52CAD79CD00911C39 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		5670EFE82CAD7EBE00911C39 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
+		5670EFEB2CAD7EFA00911C39 /* APIEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnum.swift; sourceTree = "<group>"; };
+		5670EFEE2CAD7F7F00911C39 /* RawRepresentable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,12 +223,12 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
-		56049EC42CAAF53A00A87A92 /* Managers */ = {
+		56049EC42CAAF53A00A87A92 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				56049EAD2CAAED2D00A87A92 /* NetworkManager.swift */,
+				5670EFE72CAD7E9700911C39 /* Network */,
 			);
-			path = Managers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		56049EC92CAAFAC500A87A92 /* Utils */ = {
@@ -239,6 +244,7 @@
 			children = (
 				56049ECB2CAAFAE300A87A92 /* View+.swift */,
 				5670EFE52CAD79CD00911C39 /* String+.swift */,
+				5670EFEE2CAD7F7F00911C39 /* RawRepresentable+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,8 +252,7 @@
 		56049ED02CAAFCEC00A87A92 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				56049ED12CAAFD0500A87A92 /* Protocols */,
-				56049EC42CAAF53A00A87A92 /* Managers */,
+				56049EC42CAAF53A00A87A92 /* Services */,
 				56049EC92CAAFAC500A87A92 /* Utils */,
 				56049ECA2CAAFAD400A87A92 /* Extensions */,
 			);
@@ -257,9 +262,28 @@
 		56049ED12CAAFD0500A87A92 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				5670EFE82CAD7EBE00911C39 /* APIProtocol.swift */,
 				56049ED22CAAFD1B00A87A92 /* NetworkManagerProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5670EFE72CAD7E9700911C39 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5670EFED2CAD7F3500911C39 /* Enums */,
+				56049ED12CAAFD0500A87A92 /* Protocols */,
+				56049EAD2CAAED2D00A87A92 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5670EFED2CAD7F3500911C39 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5670EFEB2CAD7EFA00911C39 /* APIEnum.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +423,8 @@
 				56049EAC2CAAEA2100A87A92 /* User.swift in Sources */,
 				5670EFE62CAD79CD00911C39 /* String+.swift in Sources */,
 				56049EBE2CAAF1A400A87A92 /* RepositoryWebView.swift in Sources */,
+				5670EFEC2CAD7EFA00911C39 /* APIEnum.swift in Sources */,
+				5670EFE92CAD7EBE00911C39 /* APIProtocol.swift in Sources */,
 				56049EB12CAAED7F00A87A92 /* UserDetail.swift in Sources */,
 				56049E802CAAE6EB00A87A92 /* UserListView.swift in Sources */,
 				56049EB92CAAF0F800A87A92 /* UserDetailView.swift in Sources */,
@@ -408,6 +434,7 @@
 				56049ED32CAAFD1B00A87A92 /* NetworkManagerProtocol.swift in Sources */,
 				56049EC82CAAF98E00A87A92 /* UserRow.swift in Sources */,
 				56049EAA2CAAE8DA00A87A92 /* GitHubDataStore.swift in Sources */,
+				5670EFEF2CAD7F7F00911C39 /* RawRepresentable+.swift in Sources */,
 				56049ECC2CAAFAE300A87A92 /* View+.swift in Sources */,
 				56049EC12CAAF1D400A87A92 /* ErrorAlertModifier.swift in Sources */,
 			);
@@ -418,7 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				56049ECF2CAAFCBF00A87A92 /* MockNetworkManager.swift in Sources */,
-				56049ED42CAAFD1B00A87A92 /* NetworkManagerProtocol.swift in Sources */,
 				56049ED62CAAFD9000A87A92 /* GitHubDataStore.swift in Sources */,
 				56049E912CAAE6ED00A87A92 /* GitHubDemoTests.swift in Sources */,
 			);
@@ -571,6 +597,7 @@
 		56049EA12CAAE6ED00A87A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_API_BASE_URL = "https://api.github.com";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GitHubDemo/GitHubDemo.entitlements;
@@ -605,6 +632,7 @@
 		56049EA22CAAE6ED00A87A92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_API_BASE_URL = "https://api.github.com";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GitHubDemo/GitHubDemo.entitlements;
