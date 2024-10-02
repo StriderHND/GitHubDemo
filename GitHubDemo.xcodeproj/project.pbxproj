@@ -32,6 +32,7 @@
 		56049ED32CAAFD1B00A87A92 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049ED22CAAFD1B00A87A92 /* NetworkManagerProtocol.swift */; };
 		56049ED42CAAFD1B00A87A92 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049ED22CAAFD1B00A87A92 /* NetworkManagerProtocol.swift */; };
 		56049ED62CAAFD9000A87A92 /* GitHubDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049EA92CAAE8DA00A87A92 /* GitHubDataStore.swift */; };
+		5670EFE62CAD79CD00911C39 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5670EFE52CAD79CD00911C39 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		56049ED22CAAFD1B00A87A92 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		56049ED72CAAFEC500A87A92 /* GitHubDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHubDemo.entitlements; sourceTree = "<group>"; };
 		56049ED82CAAFEE000A87A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5670EFE52CAD79CD00911C39 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				56049ECB2CAAFAE300A87A92 /* View+.swift */,
+				5670EFE52CAD79CD00911C39 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				56049ECE2CAAFCBF00A87A92 /* MockNetworkManager.swift in Sources */,
 				56049EC62CAAF7E300A87A92 /* Log.swift in Sources */,
 				56049EAC2CAAEA2100A87A92 /* User.swift in Sources */,
+				5670EFE62CAD79CD00911C39 /* String+.swift in Sources */,
 				56049EBE2CAAF1A400A87A92 /* RepositoryWebView.swift in Sources */,
 				56049EB12CAAED7F00A87A92 /* UserDetail.swift in Sources */,
 				56049E802CAAE6EB00A87A92 /* UserListView.swift in Sources */,

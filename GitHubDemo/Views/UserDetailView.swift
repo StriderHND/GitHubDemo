@@ -11,6 +11,7 @@ import SwiftUI
 
 struct UserDetailView: View {
     @EnvironmentObject var dataStore: GitHubDataStore
+    @State private var selectedRepositoryURL: String?
     var user: User?
 
     var body: some View {
@@ -47,7 +48,9 @@ struct UserDetailView: View {
 
                     // Display repositories
                     List(dataStore.repositories) { repo in
-                        NavigationLink(destination: RepositoryWebView(url: repo.htmlUrl)) {
+                        Button(action: {
+                            selectedRepositoryURL = repo.htmlUrl
+                        }) {
                             RepositoryRow(repository: repo)
                         }
                     }
@@ -66,6 +69,9 @@ struct UserDetailView: View {
             }
         }
         .navigationTitle(user?.login ?? dataStore.userDetail?.login ?? "")
+        .sheet(item: $selectedRepositoryURL) { url in
+                    RepositoryWebView(url: url)
+                }
         .onDisappear {
             dataStore.clearUserData()
         }

@@ -14,6 +14,7 @@ struct RepositoryRow: View {
         VStack(alignment: .leading) {
             Text(repository.name)
                 .font(.headline)
+                .foregroundColor(.primary)
             Text(repository.description ?? "")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
@@ -23,7 +24,9 @@ struct RepositoryRow: View {
                 }
                 Spacer()
                 Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
                 Text("\(repository.stargazersCount)")
+                    .foregroundColor(.primary)
             }
             .font(.caption)
         }
